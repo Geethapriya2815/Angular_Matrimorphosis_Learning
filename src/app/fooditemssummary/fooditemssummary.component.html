@@ -1,0 +1,11 @@
+<div class="food-card">
+  <h2>{{ foodName }}</h2>
+  <img [src]="imagePath" alt="{{ foodName }}" width="200" />
+  <p>Rating: {{ foodRating }} ⭐</p>
+  <p>
+    Price:
+    <del>₹{{ foodPrice | number:'1.2-2' }}</del>
+    ₹{{ finalPrice | number:'1.2-2' }}
+  </p>
+  <button (click)="placeOrder()">Order Now</button>
+</div>
