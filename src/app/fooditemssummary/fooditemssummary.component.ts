@@ -9,13 +9,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./fooditemssummary.component.css'],
 })
 export class FooditemssummaryComponent {
+  // ✅ All used as inputs from parent
   @Input() foodName: string = 'Veg Burger';
-  @Input() foodPrice: number = 120.8; // renamed from originalPrice
-  @Input() discount: number = 0.15;
-  @Input() foodRating: number = 4.5;
-  @Input() imagePath: string = 'assets/images/vegburger.jpg';
+  @Input() foodImage: string = 'assets/images/vegburger.jpg';
+  @Input() foodPrice: number = 120.8;
 
   @Output() order = new EventEmitter<void>();
+
+  discount: number = 0.15;
+  foodRating: number = 4.5;
 
   get finalPrice(): number {
     return this.foodPrice - this.foodPrice * this.discount;

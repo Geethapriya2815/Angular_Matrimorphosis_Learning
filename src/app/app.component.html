@@ -1,12 +1,11 @@
+
 <div class="food-card">
   <h1>{{ title }}</h1>
   <h2>{{ foodName }}</h2>
-  <img [src]="foodImage" alt="{{ foodName }}" width="300">
+  <img [src]="foodImage" alt="{{ foodName }}" width="300" />
   <p>Price: ₹{{ foodPrice }}</p>
   <button (click)="orderNow()">Order Now</button>
 </div>
-
-<h1>{{ title }}</h1>
 
 <app-fooditemssummary
   [foodName]="foodName"
@@ -16,3 +15,10 @@
 ></app-fooditemssummary>
 
 <app-basicfooddata></app-basicfooddata>
+
+
+<p>Rating: {{ foodRating }} {{ foodRating | rating }}</p>
+
+
+<h1>Food App</h1>
+<app-foodcategorylist></app-foodcategorylist>

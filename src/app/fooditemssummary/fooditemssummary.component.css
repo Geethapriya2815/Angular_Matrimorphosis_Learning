@@ -1,56 +1,29 @@
-.food-card {
-  text-align: center;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 280px;
-  margin: 30px auto;
+.summary-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 20px;
+  text-align: center;
+  width: 300px;
+  background-color: #fafafa;
+  margin-bottom: 30px;
 }
 
-.food-image {
+.summary-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.price {
+  border-radius: 8px;
   margin: 10px 0;
 }
 
-.old-price {
-  text-decoration: line-through;
-  color: gray;
-  margin-right: 8px;
-}
-
-.new-price {
-  font-weight: bold;
-  color: #e91e63;
-}
-
-.discount {
-  color: #4caf50;
-  font-weight: 500;
-}
-
-.rating {
-  margin: 8px 0;
-  font-size: 16px;
-}
-
-.order-btn {
-  background-color: #ff6f00;
+.summary-card button {
+  background-color: #ff6f4a;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
-.order-btn:hover {
-  background-color: #e65c00;
+.summary-card button:hover {
+  background-color: #e65a35;
 }
