@@ -1,24 +1,29 @@
+<app-nav-bar></app-nav-bar>
 
-<div class="food-card">
+<div class="main-content">
   <h1>{{ title }}</h1>
   <h2>{{ foodName }}</h2>
   <img [src]="foodImage" alt="{{ foodName }}" width="300" />
   <p>Price: ₹{{ foodPrice }}</p>
+  <p>Rating: {{ foodRating }} {{ foodRating | rating }}</p>
+
   <button (click)="orderNow()">Order Now</button>
+
+  <hr />
+
+  <!-- Food Components -->
+  <app-fooditemssummary
+    [foodName]="foodName"
+    [foodImage]="foodImage"
+    [foodPrice]="foodPrice"
+    (order)="orderNow()"
+  ></app-fooditemssummary>
+
+  <app-basicfooddata></app-basicfooddata>
+  <app-foodcategorylist></app-foodcategorylist>
+  <app-foodcategoryshowcase></app-foodcategoryshowcase>
+  <app-user-registration></app-user-registration> 
+  <router-outlet></router-outlet>
 </div>
 
-<app-fooditemssummary
-  [foodName]="foodName"
-  [foodImage]="foodImage"
-  [foodPrice]="foodPrice"
-  (order)="orderNow()"
-></app-fooditemssummary>
-
-<app-basicfooddata></app-basicfooddata>
-
-
-<p>Rating: {{ foodRating }} {{ foodRating | rating }}</p>
-
-
-<h1>Food App</h1>
-<app-foodcategorylist></app-foodcategorylist>
+<app-footer></app-footer>

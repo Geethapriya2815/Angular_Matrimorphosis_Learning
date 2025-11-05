@@ -1,8 +1,18 @@
-<div class="categories-container">
-  <div class="category-card" *ngFor="let category of categories">
-    <h2>{{ category.name }}</h2>
-    <ul>
-      <li *ngFor="let item of category.items">{{ item }}</li>
-    </ul>
-  </div>
+<!-- Modern Card View -->
+
+
+<div class="categories">
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let cat of categories" appHighlight>
+      {{ cat.name }}
+      <ul>
+        <li *ngFor="let item of cat.items" appHighlight>{{ item }}</li>
+      </ul>
+    </li>
+  </ul>
 </div>
+
+<ng-template #hideItem>
+  <p>There are no varieties present in this food category.</p>
+</ng-template>

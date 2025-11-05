@@ -1,0 +1,53 @@
+<div class="container">
+  <h2>Food Order Form</h2>
+
+  <form [formGroup]="orderForm" (ngSubmit)="printValues()">
+  
+    <label>Name:</label>
+    <input type="text" formControlName="customerName" />
+    <div *ngIf="customerName?.invalid && customerName?.touched" class="error">
+      <small *ngIf="customerName?.errors?.['required']">Name is required.</small>
+      <small *ngIf="customerName?.errors?.['hasNumber']">
+        Name should not contain numbers.
+      </small>
+    </div>
+
+    <label>Email:</label>
+    <input type="email" formControlName="email" />
+    <div *ngIf="email?.invalid && email?.touched" class="error">
+      <small *ngIf="email?.errors?.['required']">Email is required.</small>
+      <small *ngIf="email?.errors?.['pattern']">Enter a valid email address.</small>
+    </div>
+
+    <label>Phone:</label>
+    <input type="text" formControlName="phone" />
+    <div *ngIf="phone?.invalid && phone?.touched" class="error">
+      <small *ngIf="phone?.errors?.['required']">Phone number is required.</small>
+      <small *ngIf="phone?.errors?.['pattern']">
+        Phone must be 10 digits.
+      </small>
+    </div>
+
+    <label>Address:</label>
+    <textarea formControlName="address"></textarea>
+    <div *ngIf="address?.invalid && address?.touched" class="error">
+      <small>Address is required.</small>
+    </div>
+
+  
+    <label>No of Items:</label>
+    <input type="number" formControlName="noOfItems" />
+    <div *ngIf="noOfItems?.invalid && noOfItems?.touched" class="error">
+      <small *ngIf="noOfItems?.errors?.['required']">Enter item count.</small>
+      <small *ngIf="noOfItems?.errors?.['min']">Minimum 1 item required.</small>
+      <small *ngIf="noOfItems?.errors?.['max']">Maximum 10 items allowed.</small>
+    </div>
+
+    <label>Special Instructions:</label>
+    <textarea formControlName="specialInstructions"></textarea>
+
+    <button type="submit" [disabled]="orderForm.invalid">
+      Place Order
+    </button>
+  </form>
+</div>

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-fooditemssummary',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,],
   templateUrl: './fooditemssummary.component.html',
   styleUrls: ['./fooditemssummary.component.css'],
 })
